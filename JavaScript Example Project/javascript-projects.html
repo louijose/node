@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Projects</title>
+        <link rel="stylesheet" type="text/css" href="javascript-projects-style.css">
+    </head>
+    <body>
+        <script>
+            function palindromeChecker(str) {
+                return str.replace(/[\W_]/g, "").toLowerCase() === str.replace(/[\W_]/g, "").toLowerCase().split("").reverse().join("");
+            };
+            console.log(palindromeChecker("A man, a plan, a canal. Panama"));//Output = true
+            function romanConverter(num) {
+                var roman = [
+                    ["I", "V"],
+                    ["X", "L"],
+                    ["C", "D"],
+                    ["M"]
+                ];
+                var num = num.toString().split("").reverse().map((num, index) => parseInt(num));
+                var romanNumeral = "";
+                for(var i=0; i<num.length; i++) {
+                    romanNumeral = roman[i][0].repeat(num[i]) + romanNumeral;
+                    if(roman[i][1]) {
+                        romanNumeral = romanNumeral.replace(roman[i][0].repeat(5), roman[i][1]).replace(roman[i][1] + roman[i][0].repeat(4), roman[i][0] + roman[i+1][0]).replace(roman[i][0].repeat(4), roman[i][0] + roman[i][1]);
+                    }
+                }  
+                return romanNumeral;          
+            };
+            console.log(romanConverter(549));//Output = DXLIX
+            function rot13(str) {
+                return str.replace(/[A-Z]/g, ele => String.fromCharCode((ele.charCodeAt(0) % 26) + 65));
+            };
+            console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."));//Output = THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+            function telephoneCheck(str) {
+                var regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+                return regex.test(str);
+            };
+            console.log(telephoneCheck("1 555-555-5555"));//Output = true
+            function checkCashRegister(price, cash, cid) {
+                var denomination = [
+                    { name: "ONE HUNDRED", val: 100.00 },
+                    { name: "TWENTY", val: 20.00 },
+                    { name: "TEN", val: 10.00 },
+                    { name: "FIVE", val: 5.00 },
+                    { name: "ONE", val: 1.00 },
+                    { name: "QUARTER", val: 0.25 },
+                    { name: "DIME", val: 0.10 },
+                    { name: "NICKEL", val: 0.05 },
+                    { name: "PENNY", val: 0.01 }
+                ];
+                var output = { status: null, change: [] };
+                var change = cash - price;
+                var register = cid.reduce(function (reg, curr) {
+                    reg.total += curr[1];
+                    reg[curr[0]] = curr[1];
+                    return reg;
+                }, { total: 0 });
+                if (register.total === change) {
+                    output.status = "CLOSED";
+                    output.change = cid;
+                    return output;
+                } else if (register.total < change) {
+                    output.status = "INSUFFICIENT_FUNDS";
+                    return output;
+                }
+                var changeReduced = denomination.reduce(function (chArr, curr) {
+                    var value = 0;
+                    while (register[curr.name] > 0 && change >= curr.val) {
+                        change -= curr.val;
+                        register[curr.name] -= curr.val;
+                        value += curr.val;
+                        change = Math.round(change * 100) / 100;
+                    }
+                    if (value > 0) {
+                        chArr.push([curr.name, value]);
+                    }
+                    return chArr;
+                }, []);
+                if (changeReduced.length < 1 || change > 0) {
+                    output.status = "INSUFFICIENT_FUNDS";
+                    return output;
+                }
+                output.status = "OPEN";
+                output.change = changeReduced;
+                return output;
+            };
+            console.log(checkCashRegister(19.50, 20.00, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.10], ["QUARTER", 4.25], ["ONE", 90.00], ["FIVE", 55.00], ["TEN", 20.00], ["TWENTY", 60.00], ["ONE HUNDRED", 100.00]]));//Output = {status: "OPEN", change: ["QUARTER", 0.5]}
+        </script>
+        <header>
+            <ul>
+                <li><h2>Palindrome Checker</h2></li>
+                <li><h2>Roman Numeral Converter</h2></li>
+                <li><h2>Caesars Cipher</h2></li>
+                <li><h2>Telephone Number Validator</h2></li>
+                <li><h2>Cash Register</h2></li>
+            </ul>
+        </header>
+        <footer>
+            <h5>&copy; Started on <time datetime="2018-10-24">24<sup>th</sup>October, 2018</time></h5>
+        </footer>
+    </body>
+</html> 

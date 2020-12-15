@@ -1,0 +1,14 @@
+body {
+    background: url(https://i.imgur.com/MJAkxbh.png);
+    font-family: 'K2D', sans-serif;
+    text-align: center;
+}
+header {
+    padding: 0 30% 0 30%;
+}
+footer {
+    position: fixed;
+    padding: 0;
+    bottom: 0px;
+    width: 100%;
+}

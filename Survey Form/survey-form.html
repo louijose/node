@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Survey Form Project</title>
+        <link rel="stylesheet" type="text/css" href="survey-style.css">
+    </head>
+
+    <body>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <h1 id="title">Survey Form</h1>
+        <div id="content">
+            <p id="description">Let us know how we can improve freeCodeCamp</p>
+            <form id="survey-form">
+                <div class="rowtab">
+                    <div class="lefttab">
+                        <label class="label" for="name" id="name-label"><sup>*</sup>Name:</label>
+                    </div>
+                    <div class="righttab">
+                        <input class="input-field" id="name" type="text" placeholder="Enter your name" required>
+                    </div>
+                </div>
+                <div class="rowtab">
+                    <div class="lefttab">
+                        <label class="label" for="email" id="email-label"><sup>*</sup>Email:</label>
+                    </div>
+                    <div class="righttab">
+                        <input class="input-field" id="email" type="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="rowtab">
+                    <div class="lefttab">
+                        <label class="label" for="number" id="number-label"><sup>*</sup>Age:</label>
+                    </div>
+                    <div class="righttab">
+                        <input class="input-field" id="number" type="number" min="0" max="100" placeholder="Enter your age">
+                    </div>
+                </div>
+                <div class="rowtab">
+                    <div class="lefttab">
+                        <label class="label" for="dropdown">Which option best describes your current role?</label>
+                    </div>
+                    <div class="righttab">
+                        <select class="dropdown" id="dropdown" placeholder="Select an option">
+                            <option value="" disabled>Select an option</option>
+                            <option value="student">Student</option>
+                            <option value="full-time-job">Full Time Job</option>
+                            <option value="full-time-learner">Full Time Learner</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="rowtab">
+                    <div class="lefttab">
+                        <label class="label" for="recommend"><sup>*</sup>How likely is that you would recommend freeCodeCamp to a friend?</label>
+                    </div>    
+                    <div class="righttab">
+                        <input class="radio" type="radio" id="recommend1" name="recommend" value="definitely"> Definitely<br>
+                        <input class="radio" type="radio" id="recommend2" name="recommend" value="maybe"> Maybe<br>
+                        <input class="radio" type="radio" id="recommend3" name="recommend" value="not-sure"> Not sure
+                    </div>
+                </div>
+                <div class="rowtab">
+                    <div class="lefttab">
+                        <label class="label" for="whats-to-like">What do you like most in FCC:</label>
+                    </div>
+                    <div class="righttab">
+                        <select class="dropdown" id="whats-to-like">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="challenges">Challenges</option>
+                            <option value="projects">Projects</option>
+                            <option value="community">Community</option>
+                            <option value="open-source">Open Source</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="rowtab">
+                    <div class="lefttab">
+                        <label class="label" for="improvements">Things that should be improved in the future(Check all that apply):</label>
+                    </div>
+                    <div class="righttab">
+                        <input class="checkbox" type="checkbox" id="improvements1" name="improvements" value="front-end-projects"> Front-end Projects<br>
+                        <input class="checkbox" type="checkbox" id="improvements2" name="improvements" value="back-end-projects"> Back-end Projects<br>
+                        <input class="checkbox" type="checkbox" id="improvements3" name="improvements" value="data-visualization"> Data Visualization<br>
+                        <input class="checkbox" type="checkbox" id="improvements4" name="improvements" value="challenges"> Challenges<br>
+                        <input class="checkbox" type="checkbox" id="improvements5" name="improvements" value="open-source-community"> Open Source Community<br>
+                        <input class="checkbox" type="checkbox" id="improvements6" name="improvements" value="gitter-help-rooms"> Gitter help rooms<br>
+                        <input class="checkbox" type="checkbox" id="improvements8" name="improvements" value="city-meetups"> City Meetups<br>
+                        <input class="checkbox" type="checkbox" id="improvements9" name="improvements" value="wiki"> Wiki<br> 
+                        <input class="checkbox" type="checkbox" id="improvements10" name="improvements" value="forum"> Forum<br>
+                        <input class="checkbox" type="checkbox" id="improvements11" name="improvements" value="additional-courses"> Additional Courses
+                    </div>
+                </div>
+                <div class="rowtab">
+                    <div class="lefttab">
+                        <label class="label" for="comments">Any Comments or Suggestions?</label>  
+                    </div>
+                    <div class="righttab">
+                        <textarea class="input-field" id="comments" style="height:50px;resize:vertical;" placeholder="Enter your comments here..."></textarea>
+                    </div>
+                </div>
+                <input type="submit" id="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>

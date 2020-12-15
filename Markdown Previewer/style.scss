@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+$headingFont: "Russo One";
+$darkAccent: #224B4B;
+$lightAccent: #2CDA9D;
+$backgroundBase: #619E9E;
+
+$shadow: 1px 1px 10px 2px darken($backgroundBase, 20%);
+$default-border: 1px solid darken($backgroundBase, 35%);
+
+body {
+    background: lighten($backgroundBase, 12%);
+    margin: 10px 0;
+    .fa-cannabis {
+        margin-right: 3px;
+    }
+    .colorScheme {
+        background-color: lighten($backgroundBase, 30%);
+        border: $default-border;
+        box-shadow: $shadow;
+        border-top: none;
+    }
+    header {
+        position: relative;
+        background-color: lighten($darkAccent, 25%);
+        padding: 4px 4px 3px 3px;
+        border: $default-border;
+        box-shadow: $shadow;
+        font-family: $headingFont;
+        font-size: 15px;
+        i {
+            width: 25px;
+            color: black;
+            margin-left: 5px;
+        }
+        .fa-arrows-alt, .fa-compress {
+            position: absolute;
+            right: -5px;
+        }
+        .fa-compress, .fa-arrows-alt {
+            &:hover {
+                color: lighten($lightAccent, 10%);
+                cursor: pointer;
+            }
+        }
+    }
+    .editor {
+        width: 600px;
+        margin: 18px auto;
+        header {
+            width: 99%;
+        }
+        .work-area {
+            @extend .colorScheme;
+            width: 99%;
+            min-height: 200px;
+            margin-bottom: -5px;
+            resize: vertical;
+            outline: none;
+            padding-left: 5px;
+            padding-top: 5px;
+            font-size: 12px;
+        }
+    }
+    .previewer {
+        width: 800px;
+        margin: 18px auto;
+        header {
+            width: 100%;
+        }
+        .work-area {
+            @extend .colorScheme;
+            min-height: 200px;
+            margin-bottom: -5px;
+            padding-left: 5px;
+            padding-top: 5px;
+            overflow-wrap: break-word;
+        }
+    }
+    .maximized {
+        @extend .previewer;
+        width: 1400px;
+        .work-area {
+            @extend .colorScheme;
+            width: 100%;
+            min-height: 750px;
+            margin-bottom: -5px;
+            resize: vertical;
+            outline: none;
+            padding-left: 5px;
+            padding-top: 5px;
+            font-size: 12px;
+        }
+    }
+    #text-area:focus, #text-area:active {
+        outline: none !important;
+    }
+    #text:hover {
+        cursor: default;
+    }
+}
+

@@ -1,0 +1,25 @@
+{
+    "author": "Jose",
+    "description": "NPM package manager",
+    "keywords": [
+        "node",
+        "npm",
+        "package_manager"
+    ],
+    "license": "MIT",
+    "version": "1.0.0",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "dotenv": "^6.2.0",
+        "express": "^4.16.4",
+        "mongodb": "^3.1.10",
+        "mongoose": "^5.3.15"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/louijose/Node.git"
+    },
+    "scripts": {
+        "start": "node app.js"
+    }
+}

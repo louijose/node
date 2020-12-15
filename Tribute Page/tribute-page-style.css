@@ -1,0 +1,32 @@
+main {
+    position: relative;
+    text-align: center;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    top: 10px;
+    left: 5px;
+    right: 5px;
+    bottom: 20px;
+    border-radius: 20px;
+    background: rgb(212, 209, 209);
+}
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: auto;
+}
+#tribute-list{
+    text-align: left;
+    line-height: 25px;
+    padding: 0px 30% 0px 30%;
+}
+#img-div {
+    position: relative;
+    background: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
